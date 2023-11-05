@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "tg-api"
+version = "0.1.0"
+description = ""
+authors = ["Pedro Luiz <ldpedro99@outlook.com>"]
+readme = "README.md"
+packages = [{ include = "tg_api" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.104.0"
+databases = {extras = ["asyncpg"], version = "^0.8.0"}
+dynaconf = "^3.2.3"
+uvicorn = "^0.23.2"
+redis = "^5.0.1"
+dependencies = "^7.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

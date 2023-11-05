@@ -9,11 +9,18 @@ packages = [{ include = "tg_api" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = "^0.104.0"
-databases = {extras = ["asyncpg"], version = "^0.8.0"}
+databases = { extras = ["asyncpg"], version = "^0.8.0" }
 dynaconf = "^3.2.3"
 uvicorn = "^0.23.2"
 redis = "^5.0.1"
 dependencies = "^7.7.0"
+poethepoet = "^0.24.2"
+
+[tool.poe.tasks]
+deploy = [
+    { cmd = "poetry export --without-hashes --without-urls -o requirements.txt" },
+    { cmd = "docker-compose up" },
+]
 
 [build-system]
 requires = ["poetry-core"]

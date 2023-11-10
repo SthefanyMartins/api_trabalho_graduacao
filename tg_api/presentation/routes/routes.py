@@ -24,7 +24,7 @@ async def get_states_count_by_region(dependencies=Depends(application_container)
 
 
 @router.get(
-    "/restricted_services_with_schools_by_municipalities/",
+    "/schools_with_restricted_services_by_municipalities/",
     response_model=List[SchoolsWithRestrictedServicesByCity],
 )
 async def get_schools_with_restricted_services_by_municipalities(

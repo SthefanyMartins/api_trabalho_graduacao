@@ -21,6 +21,10 @@ deploy = [
     { cmd = "poetry export --without-hashes --without-urls -o requirements.txt" },
     { cmd = "docker-compose up" },
 ]
+deploy_dev = [
+    { cmd = "poetry export --without-hashes --without-urls -o requirements.txt" },
+    { cmd = "docker-compose -f docker-compose-dev.yaml up --build" },
+]
 
 [build-system]
 requires = ["poetry-core"]

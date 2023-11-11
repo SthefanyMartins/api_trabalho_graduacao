@@ -425,6 +425,9 @@ class CacheRepository:
             NumberOfHigherEducationSchoolsInEachCity
         )
     
+    async def flushall(self):
+        await self._redis.flushall()
+    
     def __serialize_list_of_models(self, model_list: List[BaseModel]):
         return json.dumps(model_list, default=lambda x: x.model_dump())
 

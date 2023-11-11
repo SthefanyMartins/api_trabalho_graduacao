@@ -7,16 +7,16 @@ services:
     container_name: api-tg
     ports:
       - "8080:80"
-  deploy:
-    resources:
-      limits:
-        cpus: '1.0'
-        memory: 1G
-      reservations:
-        cpus: '1.0'
-        memory: 1G
-  networks:
-    - api-tg
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1G
+        reservations:
+          cpus: '1.0'
+          memory: 1G
+    networks:
+      - api-tg
 
 networks:
   api-tg:

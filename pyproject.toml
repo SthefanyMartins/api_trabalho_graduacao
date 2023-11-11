@@ -19,7 +19,7 @@ poethepoet = "^0.24.2"
 [tool.poe.tasks]
 deploy = [
     { cmd = "poetry export --without-hashes --without-urls -o requirements.txt" },
-    { cmd = "docker-compose up" },
+    { cmd = "docker-compose up -d" },
 ]
 deploy_dev = [
     { cmd = "poetry export --without-hashes --without-urls -o requirements.txt" },
